@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "SNet Blocker",
+  "version": "3.0",
+  "description": "OS-level firewall-backed domain blocker with AI content filtering, threat radar, and IDN homograph protection.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "nativeMessaging",
+    "scripting",
+    "activeTab",
+    "webRequest",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "http://172.20.188.138:3000/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+  "matches": ["<all_urls>", "https://mail.google.com/*"],
+  "js": ["content.js", "gmailScanner.js"],
+  "run_at": "document_idle"
+}
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "SNet-Logo.png",
+    "48": "SNet-Logo.png",
+    "128": "SNet-Logo.png"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "com.snet.blocker",
+  "description": "SNet-Blocker Python Host",
+  "path": "C:\\Users\\reyan\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "args": ["C:\\Users\\reyan\\Documents\\SNET-Blocker-Mod-2\\backend.py"],
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://mgnjcjpnjcbcekjjgkpankmbeebcnphp/"]
+}

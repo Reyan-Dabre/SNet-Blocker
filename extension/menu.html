@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SNet Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="bg-grid"></div>
+
+    <div class="dashboard">
+        <header class="dash-header">
+            <div class="brand">
+                <div class="brand-icon">🛡️</div>
+                <span class="brand-name">SNet</span>
+            </div>
+            <div class="header-right">
+                <div class="user-badge" id="userBadge">User</div>
+                <button id="logoutBtn" class="logout-btn" title="Logout">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button id="tabScore" class="tab-btn active" data-tab="viewScore">
+                <span class="tab-icon">🛡️</span>
+                <span class="tab-label">Security</span>
+            </button>
+            <button id="tabBlock" class="tab-btn" data-tab="viewBlock">
+                <span class="tab-icon">🚫</span>
+                <span class="tab-label">Blocked</span>
+            </button>
+            <button id="tabTrust" class="tab-btn" data-tab="viewTrust">
+                <span class="tab-icon">✅</span>
+                <span class="tab-label">Trusted</span>
+            </button>
+            <button id="tabEmail" class="tab-btn" data-tab="viewEmail">
+                <span class="tab-icon">📧</span>
+                <span class="tab-label">Email</span>
+            </button>
+            <button id="tabAuto" class="tab-btn" data-tab="viewAuto">
+                <span class="tab-icon">🤖</span>
+                <span class="tab-label">Auto</span>
+            </button>
+        </nav>
+
+        <main class="content-area">
+
+            <section id="viewScore" class="view active">
+                <div class="radar-container">
+                    <div class="radar">
+                        <div class="radar-sweep"></div>
+                        <div class="radar-rings">
+                            <div class="radar-ring ring-1"></div>
+                            <div class="radar-ring ring-2"></div>
+                            <div class="radar-ring ring-3"></div>
+                        </div>
+                        <div class="radar-center">
+                            <h1 id="statusText">100%</h1>
+                            <span id="statusLabel">Safe</span>
+                        </div>
+                        <div class="radar-dots" id="radarDots"></div>
+                    </div>
+                </div>
+
+                <p class="sub-label">Current Site:</p>
+                <div id="currentDomain" class="chip">Detecting...</div>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-value" id="statToday">0</div>
+                        <div class="stat-label">Blocked Today</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statTotal">0</div>
+                        <div class="stat-label">Total Threats</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statRules">0</div>
+                        <div class="stat-label">Active Rules</div>
+                    </div>
+                </div>
+                <div class="sync-footprint" id="syncFootprint">Cross-device sync not checked yet.</div>
+            </section>
+
+            <section id="viewEmail" class="view">
+                <h3>Phishing Intelligence</h3>
+                <p class="section-desc">Paste email headers or content to analyze for spoofing and malicious intent.</p>
+                <div class="email-scan-container">
+                    <textarea id="emailInput" placeholder="Paste 'Show Original' data or email body here..."></textarea>
+                    <button id="scanEmailBtn" class="btn-primary">Analyze Intelligence</button>
+                </div>
+                <div id="emailResult" class="email-result-box">
+                    <div class="empty-msg">Awaiting manual input...</div>
+                </div>
+            </section>
+
+            <section id="viewBlock" class="view">
+                <h3>Block a Domain</h3>
+                <div class="input-group">
+                    <input type="text" id="blockInput" placeholder="example.com">
+                    <button id="addBlockBtn" class="action-btn danger">Block</button>
+                </div>
+                <h4>Currently Blocked</h4>
+                <ul id="blockList" class="scroll-list"></ul>
+            </section>
+
+            <section id="viewTrust" class="view">
+                <h3>Trust a Domain</h3>
+                <div class="input-group">
+                    <input type="text" id="trustInput" placeholder="trusted-site.com">
+                    <button id="addTrustBtn" class="action-btn success">Trust</button>
+                </div>
+                <h4>Whitelist Overrides</h4>
+                <ul id="trustList" class="scroll-list"></ul>
+            </section>
+
+            <section id="viewAuto" class="view">
+                <h3>Auto-Detected Threats</h3>
+                <p class="section-desc">Domains blocked automatically by the analysis engine.</p>
+                <ul id="autoBlockList" class="scroll-list"></ul>
+            </section>
+
+        </main>
+
+        <div class="status-bar" id="statusBar">
+            <span class="status-dot online"></span>
+            <span id="statusBarText">Server Connected</span>
+        </div>
+    </div>
+
+    <script src="rule.js"></script>
+    <script src="gmailScanner.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNet Blocker — Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+    <!-- Animated background particles -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <div class="auth-card">
+        <!-- Logo + Branding -->
+        <div class="auth-logo">
+            <div class="shield-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
+            <h1>SNet Blocker</h1>
+            <p class="auth-subtitle">Firewall-Backed Protection</p>
+        </div>
+
+        <!-- Server Status Indicator -->
+        <div id="serverStatus" class="server-status checking">
+            <span class="status-dot"></span> Checking server...
+        </div>
+
+        <!-- Auth Form -->
+        <div id="authBox">
+            <div class="input-wrapper">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="pass">Password</label>
+                <input type="password" id="pass" placeholder="••••••••" autocomplete="current-password">
+            </div>
+
+            <div id="signupFields" style="display:none;">
+                <div class="input-wrapper">
+                    <label for="passConfirm">Confirm Password</label>
+                    <input type="password" id="passConfirm" placeholder="••••••••">
+                </div>
+            </div>
+
+            <button id="actionBtn" class="btn-primary">Login</button>
+            <p id="toggleMode" class="toggle-link">Need an account? Sign up</p>
+            <p id="msg" class="msg-error"></p>
+        </div>
+
+        <div class="auth-footer">
+            <span>🔥 Windows Firewall</span>
+            <span>•</span>
+            <span>🛡️ Content Filter</span>
+            <span>•</span>
+            <span>🔒 OS-Level</span>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
