@@ -6,7 +6,7 @@
 
 **A Zero-Trust Chrome Extension for Real-Time Threat Intelligence & Phishing Detection**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [![Chrome Extension](https://img.shields.io/badge/Platform-Chrome-yellow.svg)](https://developer.chrome.com/docs/extensions/)
 [![Node.js](https://img.shields.io/badge/Backend-Node.js-green.svg)](https://nodejs.org/)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
