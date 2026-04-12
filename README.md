@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="extension/New-SNet-Logo.png" alt="SNet Blocker Logo" width="120"/>
+<img src="extension/New-SNet-Logo.png" alt="SNet Blocker Logo" width="160"/>
 
 # SNet Blocker
 
