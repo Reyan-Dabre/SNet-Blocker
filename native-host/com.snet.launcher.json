@@ -4,6 +4,6 @@
   "path": "C:\\Users\\reyan\\OneDrive\\Desktop\\Projects\\FIRENET\\native-host\\snet_launcher.bat",
   "type": "stdio",
   "allowed_origins": [
-    "chrome-extension://opngioodagpjfomfhongpnmpdbibgjbh/"
+    "chrome-extension://opngioodagpjfomfhongpnmpdbibgjbh"
   ]
 }

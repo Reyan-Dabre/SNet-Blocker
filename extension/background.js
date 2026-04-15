@@ -25,7 +25,7 @@ const KNOWN_DANGEROUS_DOMAINS = [
 "redtube.com","youporn.com","spankbang.com",
 "onlyfans.com","stripchat.com","chaturbate.com",
 "thepiratebay.org","1337x.to","yts.mx",
-"grabify.link","iplogger.org"
+"grabify.link","iplogger.org","redgifs.com","masa49.it.com","masa49.it"
 ];
 
 const FORBIDDEN_KEYWORDS = {
